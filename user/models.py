@@ -7,7 +7,7 @@ class User(models.Model):
     # 地址
     address = models.CharField(max_length=100)
     # 生日
-    birthday = models.DateTimeField()
+    birthday = models.DateField()
 
     def getSelectAll(self):
         list = {}

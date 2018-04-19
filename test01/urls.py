@@ -18,5 +18,10 @@ from django.conf.urls import url
 from user import views as user
 
 urlpatterns = [
+    # 获取所有的用户信息
     url(r'selectUserAll$', user.selectUserAll),
+    # 根据用户的ID获取用户的信息
+    url(r'getSelectById', user.getSelectById),
+    # 添加用户
+    url(r'addUser', user.addUser),
 ]
