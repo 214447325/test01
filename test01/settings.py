@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
         'NAME': 'test01',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': '123',
         'HOST':'localhost',
         'PORT':'3306',
     }
@@ -122,3 +122,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+'''
+ redis数据的配置
+'''
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": [
+            "redis://127.0.0.1:6379/0"],
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+# session里面存值
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+SESSION_CACHE_ALIAS = "default"
