@@ -23,7 +23,7 @@ def selectUserAll(request):
     userlist = []
     list = {}
     try:
-        user_list = User.objects.all()
+        user_list = user.getSelectAllUserInfo()
         if len(user_list) > 0:
             for value in user_list:
                 u = User.getSelectAll(value)

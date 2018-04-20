@@ -24,4 +24,8 @@ urlpatterns = [
     url(r'getSelectById', user.getSelectById),
     # 添加用户
     url(r'addUser', user.addUser),
+    # 修改用户的信息
+    url(r'updateUserInfo', user.updateUserInfo),
+    # 删除该用户的信息
+    url(r'deleteUserInfo', user.deleteUserInfo),
 ]
